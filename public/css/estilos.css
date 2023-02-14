@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+box-sizing: border-box;
+}
+
+body{
+background-color: #334455;
+color: #abc;
+font-family: 'Nunito', sans-serif;
+margin: 0;
+font-weight: 300;
+}
+
+.cabecera{
+height: 200px;
+/*background-image: url(../img/pexels-valeria-boltneva-1639562.jpg);*/
+background-color: #334455;
+background-position: center;
+background-size: cover;
+background-blend-mode: color-dodge;
+display: flex;
+justify-content: left;
+align-items: center;
+padding-left: 50px;
+font-weight: 700;
+font-size: xx-large;
+}
+
+.cabecera h1{
+font-family: 'Raleway', 'Nunito', Arial, sans-serif;
+font-weight: 300;
+}
+
+nav{
+border-top: 2px solid white;
+border-bottom: 2px solid white;
+}
+nav ul{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+nav ul li{
+list-style-type: none;
+}
+nav ul li a{
+display: inline-block;
+min-width: 100px;
+padding: 5px;
+color: #abc;
+text-decoration: none;
+border-radius: 3px;
+text-align: center;
+}
+
+nav ul li a:hover{
+background-color: #445566;
+color: #bcd;
+text-decoration: none;
+}
+
+
+.contenido{
+margin: 0 auto;
+padding: 10px;
+max-width: 80ch;
+}
+
+.contenido a{
+color: #cde;
+text-decoration: none;
+border-bottom: 1px solid whitesmoke;
+border-radius: 3px;   
+}
+.contenido a:hover{
+color: #bcd;
+background-color: #445566;
+}
+
+dfn{
+font-variant: small-caps;
+font-weight: 700;
+}
+
+input[type=button], input[type=submit]{
+	border: 2px solid #cde;
+	background-color: #445566;
+	border-radius: 3px;
+	padding: 5px;
+	min-width: 10rem;
+}
+
+input[type=button]:hover, input[type=submit]:hover{
+	background-color: #cde;
+}
