@@ -19,12 +19,14 @@ Route::get('/', function () {
 });
 
 
+use App\Http\Controllers\EnlaceController;
 
-// Route::middleware('auth')->group(function () {
-    Route::get('/enlaces', function(){
-    	return view('enlaces');
-    })->name('enlaces.index');
-// });
+Route::get('/enlaces', [EnlaceController::class, 'index'])->name('enlaces.index');
+
+Route::middleware('auth')->group(function () {
+  Route::get('/enlaces/create', [EnlaceController::class, 'create'])->name('enlaces.create');
+  Route::post('/enlaces/create', [EnlaceController::class, 'store'])->name('enlaces.store');
+});
 
 
 

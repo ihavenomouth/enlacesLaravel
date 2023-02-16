@@ -15,7 +15,7 @@ font-weight: 300;
 
 .cabecera{
 height: 200px;
-/*background-image: url(../img/pexels-valeria-boltneva-1639562.jpg);*/
+/*background-image: url(/img/fondocabecera.jpg);*/
 background-color: #334455;
 background-position: center;
 background-size: cover;
@@ -90,8 +90,10 @@ input[type=button], input[type=submit]{
 	border-radius: 3px;
 	padding: 5px;
 	min-width: 10rem;
+	color:#cde;
 }
 
 input[type=button]:hover, input[type=submit]:hover{
 	background-color: #cde;
+	color: #445566;
 }

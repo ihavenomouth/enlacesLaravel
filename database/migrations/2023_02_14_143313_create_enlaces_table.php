@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('enlaces', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nombre');
             $table->string('url')->unique();
             $table->string('categoria');
             $table->timestamps();
