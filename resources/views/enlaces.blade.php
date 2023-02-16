@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enlaces</title>
-    <link rel="stylesheet" href="/css/estilos.css">
-    <style>
-    </style>
-</head>
-<body>
-<div class="cabecera">
-    <h1>Enlaces</h1>
-</div>
+@extends('layout')
 
-<nav>
+@section('navegación')
     <ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/enlaces">Enlaces</a></li>
@@ -31,10 +18,10 @@
           @endauth
         @endif
     </ul>
-</nav>
+@endsection
 
-<div class="contenido">
-	@auth
+@section("contenido")
+  @auth
     <form method="get" action="/enlaces/create">
         <label for="crearenlace">Acciones:</label><br>
         <input id="crearenlace" type="submit" value="Crear nuevo enlace">
@@ -42,19 +29,42 @@
     
 
     <h2>Enlaces guardados</h2>
-    @forelse ($enlaces as $e)
-        <li><a href="http://{{$e->url}}">{{$e->nombre}}</a> [{{$e->categoria}}] </li>
-    @empty
-        <li>No hay ningún enlace almacenado.</li>
-    @endforelse
 
-    @endauth
+    @if( !empty($enlaces) )
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>URL</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        @foreach ($enlaces as $e)
+          <tr>
+            <td>{{$e->nombre}}</td>
+            <td class="center"><a href="http://{{$e->url}}">{{$e->url}}</a></td>
+            <td>{{$e->categoria}}</td>
+            <td class="center acciones">
+                <form method="delete" action="/enlaces/{{$e->id}}">@csrf
+                    <input type="submit" class="eliminar" value="Eliminar">
+                <form>
+                <a href="/enlaces/{{$e->id}}/edit">Editar</a>
+                <a href="/enlaces/{{$e->id}}">Mostrar</a>
+            </td>
+          </tr>
+        @endforeach
+        </tbody>
+      </table>
+    @else
+      <p>No hay ningún enlace almacenado.</p>
+    @endif
+  @endauth
 
-    @guest
+  @guest
     <h2>Contenido protegido</h2>
     <p>No se puede acceder al contenido de esta página sin iniciar sesión. 
     <a href="{{ route('login') }}">Inicie sesión</a> para poder acceder.</p>
-    @endguest
-</div>
-</body>
-</html>
+  @endguest
+@endsection

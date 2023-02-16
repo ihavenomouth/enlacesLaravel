@@ -47,7 +47,7 @@ class EnlaceController extends Controller
           return view('crearenlace', ['error' => "No se pudo crear el enlace, compruebe si ya \
                existe esa URL ($request->nombre : $request->url) en la lista de enlaces."]);
         }
-              
+
         $enlaces = Enlace::get();        
         return view('enlaces', ['enlaces' => $enlaces] );         
     }

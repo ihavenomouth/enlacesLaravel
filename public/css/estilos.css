@@ -65,14 +65,14 @@ text-decoration: none;
 .contenido{
 margin: 0 auto;
 padding: 10px;
-max-width: 80ch;
+max-width: 100ch;
 }
 
 .contenido a{
 color: #cde;
 text-decoration: none;
-border-bottom: 1px solid whitesmoke;
-border-radius: 3px;   
+border-bottom: 1px dotted whitesmoke;
+border-radius: 0px;   
 }
 .contenido a:hover{
 color: #bcd;
@@ -96,4 +96,33 @@ input[type=button], input[type=submit]{
 input[type=button]:hover, input[type=submit]:hover{
 	background-color: #cde;
 	color: #445566;
+}
+
+table{
+	border: 1px solid white;
+	border-collapse: collapse;
+	min-width: 80%;
+}
+
+thead tr{
+	background-color: #cde;
+	color: #445566;
+}
+th,td{
+	padding: 10px;
+}
+
+tr:nth-child(even){
+	background-color: #233445;
+}
+
+.center{
+	text-align: center;
+}
+td.acciones{
+	background-color: #567;
+}
+
+.eliminar{
+	color:darkred;
 }
