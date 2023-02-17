@@ -15,7 +15,7 @@ font-weight: 300;
 
 .cabecera{
 height: 200px;
-/*background-image: url(/img/fondocabecera.jpg);*/
+background-image: url(/img/fondocabecera.jpg);
 background-color: #334455;
 background-position: center;
 background-size: cover;
@@ -123,6 +123,12 @@ td.acciones{
 	background-color: #567;
 }
 
-.eliminar{
-	color:darkred;
+input[type=submit].eliminar:hover{
+	background-color: #ff5588;
+	color: #883322;
+	font-weight: bold;
+}
+
+.inlineblock{
+	display: inline-block;
 }

@@ -94,6 +94,15 @@ class EnlaceController extends Controller
      */
     public function destroy(Enlace $enlace)
     {
-        //
+        try{
+            $enlace->delete();
+        }
+        catch(\Exception $e){
+          return view('enlaces', ['error' => "No se pudo eliminar el enlace \
+              ($enlace->nombre : $enlace->url)."]);
+        }
+
+        $enlaces = Enlace::get();
+        return view('enlaces', ['enlaces' => $enlaces] );  
     }
 }

@@ -20,14 +20,19 @@ Route::get('/', function () {
 
 
 use App\Http\Controllers\EnlaceController;
+use App\Models\Enlace;
 
 Route::get('/enlaces', [EnlaceController::class, 'index'])->name('enlaces.index');
 
 Route::middleware('auth')->group(function () {
   Route::get('/enlaces/create', [EnlaceController::class, 'create'])->name('enlaces.create');
   Route::post('/enlaces/create', [EnlaceController::class, 'store'])->name('enlaces.store');
+  Route::delete('/enlaces/{enlace}', [EnlaceController::class, 'destroy'])->name('enlaces.destroy');
 });
 
+Route::fallback(function () {
+  return view('errors/404');
+});
 
 
 // Route::get('/dashboard', function () {

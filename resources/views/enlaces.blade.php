@@ -25,10 +25,14 @@
     <form method="get" action="/enlaces/create">
         <label for="crearenlace">Acciones:</label><br>
         <input id="crearenlace" type="submit" value="Crear nuevo enlace">
-      </form>
-    
+    </form>
 
     <h2>Enlaces guardados</h2>
+
+    @if(! empty($error) )
+        <p>Se produjo un error al intentar eliminar el enlace anterior.</p>
+        <p>Error: {{$error}}</p>
+    @endif
 
     @if( !empty($enlaces) )
       <table>
@@ -47,9 +51,11 @@
             <td class="center"><a href="http://{{$e->url}}">{{$e->url}}</a></td>
             <td>{{$e->categoria}}</td>
             <td class="center acciones">
-                <form method="delete" action="/enlaces/{{$e->id}}">@csrf
+                <form class="inlineblock" method="post" action="/enlaces/{{$e->id}}">
+                    @csrf
+                    @method('delete')
                     <input type="submit" class="eliminar" value="Eliminar">
-                <form>
+                </form>
                 <a href="/enlaces/{{$e->id}}/edit">Editar</a>
                 <a href="/enlaces/{{$e->id}}">Mostrar</a>
             </td>
@@ -57,10 +63,12 @@
         @endforeach
         </tbody>
       </table>
+      <br>
     @else
       <p>No hay ningún enlace almacenado.</p>
     @endif
   @endauth
+
 
   @guest
     <h2>Contenido protegido</h2>
