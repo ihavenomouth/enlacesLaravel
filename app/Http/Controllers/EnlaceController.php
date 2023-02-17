@@ -49,7 +49,7 @@ class EnlaceController extends Controller
         }
 
         $enlaces = Enlace::get();        
-        return view('enlaces', ['enlaces' => $enlaces] );         
+        return view('enlaces', ['enlaces' => $enlaces] );
     }
 
     /**
@@ -60,7 +60,7 @@ class EnlaceController extends Controller
      */
     public function show(Enlace $enlace)
     {
-        //
+        return view('mostrarenlace', ['enlace' => $enlace] );
     }
 
     /**

@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/enlaces/create', [EnlaceController::class, 'create'])->name('enlaces.create');
   Route::post('/enlaces/create', [EnlaceController::class, 'store'])->name('enlaces.store');
   Route::delete('/enlaces/{enlace}', [EnlaceController::class, 'destroy'])->name('enlaces.destroy');
+  Route::get('/enlaces/{enlace}', [EnlaceController::class, 'show'])->name('enlaces.show');
 });
 
 Route::fallback(function () {

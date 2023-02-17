@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enlaces</title>
+
+    <link rel="preload" href="/img/fondocabecera.jpg" as="image" type="image/jpg" />
+    
     <link rel="stylesheet" href="/css/estilos.css">
     <style>
     </style>
