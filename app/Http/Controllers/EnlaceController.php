@@ -44,12 +44,10 @@ class EnlaceController extends Controller
           $enlace->save();
         }
         catch(\Exception $e){
-          return view('crearenlace', ['error' => "No se pudo crear el enlace, compruebe si ya \
+          return view('crearenlace', ['error' => "No se pudo crear el enlace, compruebe si ya 
                existe esa URL ($request->nombre : $request->url) en la lista de enlaces."]);
         }
-
-        $enlaces = Enlace::get();        
-        return view('enlaces', ['enlaces' => $enlaces] );
+        return redirect()->route('enlaces.index');
     }
 
     /**
@@ -102,7 +100,6 @@ class EnlaceController extends Controller
               ($enlace->nombre : $enlace->url)."]);
         }
 
-        $enlaces = Enlace::get();
-        return view('enlaces', ['enlaces' => $enlaces] );  
+        return redirect()->route('enlaces.index');
     }
 }

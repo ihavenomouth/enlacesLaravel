@@ -85,6 +85,7 @@ font-weight: 700;
 }
 
 input[type=button], input[type=submit]{
+	font-variant: small-caps;
 	border: 2px solid #cde;
 	background-color: #445566;
 	border-radius: 3px;
@@ -96,6 +97,18 @@ input[type=button], input[type=submit]{
 input[type=button]:hover, input[type=submit]:hover{
 	background-color: #cde;
 	color: #445566;
+}
+
+input{
+  border: 2px solid #cde;
+  border-radius: 3px;
+  padding: 5px;
+  min-width: 10rem;
+  margin-bottom: 10px;
+}
+
+input[type=checkbox]{
+  min-width: 1rem;
 }
 
 table{
